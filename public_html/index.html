@@ -11,8 +11,8 @@
 <section class="header">
     <nav>
         <a href="index.html"><img src="images/logo1.png" alt=""></a>
-        <div class="nav-links">
-            <i class="fas fa-times"></i>
+        <div class="nav-links" id="navLinks">
+            <i class="fas fa-times" onclick="hideMenu()"></i>
             <ul>
                 <li><a href="">HOME</a></li>
                 <li><a href="">HOME</a></li>
@@ -20,12 +20,63 @@
                 <li><a href="">HOME</a></li>
             </ul>
         </div>
-        <i class="fas fa-bars"></i>
+        <i class="fas fa-bars" onclick="showMenu()"></i>
     </nav>
     <div class="text-box">
         <h1>Everything Is Connected</h1>
         <a href="" class="hero-btn">Visit This Page to Know More</a>
     </div>
 </section>
+<!--Second Section-->
+
+<section class="second">
+    <h1>Second Section</h1>
+    <p>Different history</p>
+    <div class="row">
+        <div class="course-col">
+            <h3>First Colmn</h3>
+            <p>COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent
+                COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent
+                COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent
+                COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent
+                COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent
+                COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent </p>
+        </div>
+        <div class="course-col">
+            <h3>Second Colmn</h3>
+            <p>COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent
+                COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent
+                COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent
+                COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent
+                COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent
+                COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent </p>
+        </div>
+        <div class="course-col">
+            <h3>Third Colmn</h3>
+            <p>COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent
+                COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent
+                COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent
+                COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent
+                COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent
+                COntent COntent COntent COntent COntent COntent COntent COntent COntent COntent </p>
+        </div>
+    </div>
+</section>
+<!--Second Section-->
+
+
+<!--JavaScript for toogle-->
+
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu() {
+        navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+        navLinks.style.right = "-200px";
+    }
+</script>
 </body>
 </html>
