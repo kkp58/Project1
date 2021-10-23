@@ -133,16 +133,19 @@ nav .fas {
 }
 
 p {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 300;
-    line-height: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 28px;
     padding: 10px;
 }
 
 ul {
-    font-size: 18px;
-    padding-left: 30px;
+    font-size: 17px;
+    padding-left: 40px;
     font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+
 }
 
 .col {
