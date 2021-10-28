@@ -133,6 +133,7 @@ nav .fas {
 }
 
 .secondSection{
+    padding-bottom: 10px;
     background-color: lightblue;
 }
 
@@ -169,12 +170,11 @@ h3 {
 }
 
 #click {
+    display: block;
     font-weight: bold;
     border-radius: 13px;
     background-color: green;
-    margin-left: 140px;
     margin-top: 15px;
-    width: 40%;
     border: 3px solid green;
     padding: 10px;
     transition: 1s;
@@ -194,7 +194,13 @@ h3 {
 }
 
 .foot{
+    padding: 15px;
     text-align: center;
     background-color: #193366;
     color: white;
+}
+
+.download{
+    width: 40%;
+    align-items: center;
 }
