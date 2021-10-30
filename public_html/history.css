@@ -168,9 +168,12 @@ p{
 }
 
 .foot{
-    text-align: center;
+    width: 100%;
+    padding: 25px;
+    text-align: center !important;
     background-color: #193366;
     color: white;
 }
+
 
 
