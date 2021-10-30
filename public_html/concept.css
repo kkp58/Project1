@@ -137,14 +137,15 @@ h1{
     font-size: 40px;
     font-weight: 600;
 }
-p{
+#second p{
+    font-family:"Berlin Sans FB";
     color: #777;
     font-size: 17px;
     font-weight: 300;
     line-height: 22px;
     padding: 10px;
 }
-.row{
+#second .row{
     margin: auto;
     display: flex;
     justify-content: space-around;
@@ -185,8 +186,13 @@ h3{
 }
 
 .foot{
-    text-align: center;
+    width: 100%;
+    padding: 25px;
+    text-align: center !important;
+    background-color: #193366;
+    color: white;
 }
+
 
 
 
