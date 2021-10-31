@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Concept</title>
+    <link rel="stylesheet" href="concept.css">
+    <script src="https://kit.fontawesome.com/86aca87940.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+<section id="second" class="header">
+    <nav>
+        <a href="index.html"><img src="images/logo1.png" alt=""></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fas fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="concept.html">Concepts</a></li>
+            </ul>
+        </div>
+        <i class="fas fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <h1>Some Main Components of Internet</h1>
+    <div class="row">
+        <div class="course-col">
+            <h3>What is Packet Switching?</h3>
+            <p>Chopping the data into little pieces called packets, launching them into the network and it tries to find
+                its way to its destination, each packet operating independently. The packet switching method is very
+                reliable and allows data to be sent securely, even over damaged networks; it also uses bandwidth very
+                efficiently and doesn’t need a single dedicated link, like a telephone call does. Paul Baran came up
+                with this idea of hot potato routing. Hot Potato routing meant a message transiting a network goes where
+                it should be going, even if part of the network was destroyed. He got this idea from previous model of
+                mice in a maze</p>
+        </div>
+        <div class="course-col">
+            <h3>How TCP/IP works?</h3>
+            <p>TCP/IP stands for Transmission Control Protocol/Internet Protocol. The term is used to describe a set of
+                protocols that govern how data moves through a network. All the different devices on the internet have
+                unique addresses. An address on the internet is just a number similar to a phone number, or a sort of
+                street address that's unique to each computer or device at the edge of the network. And it forms part of
+                one of the most important protocols used in internet communication, simply called IP. A computer's
+                address then is called its IP address. Visiting website is really just your computer
+                asking another computer for information. Your computer sends a message to the other computer's IP
+                address, and it also sends along its origin address so the other computer knows where to send its
+                response </p>
+        </div>
+        <div class="course-col">
+            <h3>What does the DNS do?</h3>
+            <p>DNS stands for Domain Name System. It is the internet’s equivalent of a phone book, and converts
+                hard-to-remember IP addresses into simple names. Most users never see or care about internet addresses.
+                A system called the domain name system or DNS associates names like www.example.com with the
+                corresponding addresses. Your computer uses DNS to look up the domain names and get’s that associated IP
+                address which is then used to connect your computer to the destination. </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="course-col">
+            <h3>HTTP and HTML</h3>
+            <p>So you've probably wondered what actually happens when you type an address into your web browser and then
+                hit enter. So in that moment, your computer starts
+                talking to another computer called a server, that is usually 1000s of miles away. And in milliseconds,
+                your computer asks that server for a website. That server then starts to talk back to your computer in a
+                language called HTTP. An HTTP stands for hypertext transfer protocol. You can kind of think of it
+                as the language that one computer uses to ask another computer for a document. The HTML stands for
+                Hypertext Markup Language and that is the language that you use to tell a web browser
+                how to make a page look. To summarize, HTTP and DNS manage the sending and receiving of HTML, media
+                files or anything on the web. What makes this possible under the hood are TCP/IP and router networks
+                that break down and transport information in small packets. Those packets themselves are made up of
+                binary sequences of ones and zeros that are physically sent through electric wires, fiber optic cables
+                and wireless networks.
+            </p>
+        </div>
+        <div class="course-col">
+            <img style="display: block;"
+                 src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Packet_Switching.gif"
+                 alt="File:Packet Switching.gif">
+
+        </div>
+    </div>
+</section>
+<section class="foot">
+    <footer>
+        <div class="row">
+            <div class="col-md-4">
+                Image Credits - <a href="https://creativecommons.org/">https://creativecommons.org/</a>
+            </div>
+            <div class="col-md-4">
+                © Krishna Patel:
+                <a href="https://github.com/kkp58/Project1"> Github Repository</a>
+            </div>
+            <div class="col-md-4">
+                <img alt="Icon"
+                     src="https://www.w3.org/Icons/valid-html401.png">
+            </div>
+        </div>
+    </footer>
+</section>
+<script src="toggle.js"></script>
+</body>
+</html>
