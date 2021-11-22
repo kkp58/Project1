@@ -19,18 +19,53 @@
                 <li><a href="../history.html">History</a></li>
                 <li><a href="../concept.html">Concepts</a></li>
                 <li><a href="pylintAndOthers.html">Pylint & Terms</a></li>
-<!--                <li><a href="testing.html">AAA Testing</a></li>-->
-<!--                <li><a href="oops.html">OOPS</a></li>-->
-<!--                <li><a href="design.html">Design Patterns</a></li>-->
+                <!--                <li><a href="testing.html">AAA Testing</a></li>-->
+                <!--                <li><a href="oops.html">OOPS</a></li>-->
+                <!--                <li><a href="design.html">Design Patterns</a></li>-->
             </ul>
         </div>
         <i class="fas fa-bars" onclick="showMenu()"></i>
     </nav>
 </section>
 <section>
-    <div class="card">
-        <h2>Pylint:</h2>
-        <p></p>
+    <div class="row">
+        <div id="pylint" class="col-md-6 card">
+            <h2>Pylint:</h2>
+            <p>What is Pylint -
+                Pylint is a tool to check Python’s code errors enforcing some code standards. It looks for certain types
+                of errors and recommends suggestions about how particular chunks of code can be refactored. The Python
+                community has formalized some recommended programming styles to help everyone write code in a common,
+                agreed-upon style that makes the most sense for shared code. This style is captured in PEP 8, “the style
+                guide for Python code”. Pylint can be a quick and easy way of seeing if your code has captured the
+                pattern of PEP 8 standards and is user-friendly
+                It displays the number of messages as it analyzes the code and it can also be used for displaying some
+                statistics about the number of warnings and errors found in different files. It gives overall marks to
+                the code based on the number and severity of the warnings and errors.
+                We should have .pylintrc which is the config file for pylint.
+
+                We will make a small tutorial for one part of calculator code to check if that passes the pylint
+                standards or not.
+            </p>
+            <h2>Tutorial</h2>
+            <img src="../images/pylintTutorial1.jpg" alt="pylintTutorial1">
+            <p>So this is our code ‘main.py’ for the calculator program. Let’s see what we get when we run through
+                pylint. Pylint also gives marks to your code.<br>
+
+                Command - ‘pylint filename’. We have a main.py file in folder named calculator.
+            </p>
+            <img src="../images/pylintTutorial2.jpg" alt="pylintTutorial2">
+            <p>We see we got three error messages. First one says it’s on line 2 and the other two are on line 21. Two
+                of them are about missing class and function docstring. So there should be a little comment underneath
+                explaining the class ‘calculator’ and method ‘divide_number’ does. Middle one is about that method name
+                does not follow snake_case naming style. There should be no capital letters in the method name. Let’s
+                correct them and run it.
+            </p>
+            <h4>Here is the updated code:</h4>
+            <img src="../images/pylintTutorial3.jpg" alt="pylintTutorial3">
+            <p>Let’s see what we get after running it</p>
+            <img src="../images/pylintTutorial4.jpg" alt="pylintTutorial4">
+            <p><b>Hooray!!</b> No errors and we got full marks.</p>
+        </div>
     </div>
 </section>
 <script src="../toggle.js"></script>
