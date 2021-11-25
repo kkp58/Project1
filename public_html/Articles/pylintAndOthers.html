@@ -9,7 +9,7 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-<section>
+<section id="header">
     <nav>
         <a href="../index.html"><img src="../images/logo1.png" alt=""></a>
         <div class="nav-links" id="navLinks">
@@ -19,15 +19,15 @@
                 <li><a href="../history.html">History</a></li>
                 <li><a href="../concept.html">Concepts</a></li>
                 <li><a href="pylintAndOthers.html">Pylint & Terms</a></li>
-                <!--                <li><a href="testing.html">AAA Testing</a></li>-->
-                <!--                <li><a href="oops.html">OOPS</a></li>-->
-                <!--                <li><a href="design.html">Design Patterns</a></li>-->
+                <li><a href="AAATesting.html">AAA Testing</a></li>
+                <li><a href="design.html">Design Patterns</a></li>
+                <li><a href="oops.html">OOPS</a></li>
             </ul>
         </div>
         <i class="fas fa-bars" onclick="showMenu()"></i>
     </nav>
 </section>
-<section>
+<section id="second">
     <div class="row">
         <div id="pylint" class="col-md-6 card">
             <h2>Pylint:</h2>
@@ -65,6 +65,95 @@
             <p>Let’s see what we get after running it</p>
             <img src="../images/pylintTutorial4.jpg" alt="pylintTutorial4">
             <p><b>Hooray!!</b> No errors and we got full marks.</p>
+        </div>
+        <div id="glossary" class="col-md-6 card">
+            <h2>Glossary of important terminology in python</h2>
+            <p><b>Class </b>- A class is a blueprint for the object. For example, we have a calculator class, which
+                takes care
+                of all the calculations. (in main branch)<br>
+                <code>class Calculator:</code><br>
+                <code>&emsp; &emsp; """ This is the Calculator class """</code><br><br>
+                <b>Object </b>- An object (instance) is an instantiation of a class. When class is defined, only the
+                description for the object is defined. Therefore, no memory or storage is allocated.
+                In our calculator code, addition = Addition(mynumbers) ‘addition’ is called the object of ‘Addition’
+                class<br><br>
+
+                <b>Method</b> - Methods are functions defined inside the body of a class. They are used to define the
+                behaviors
+                of an object. Method is defined using the keyword ‘def’. For example ‘def get_result()’ in our program
+                is called a method.<br><br>
+
+                <b>Instance</b> - From class, we construct instances. An instance is a specific object created from a
+                particular class.<br><br>
+
+                <b>constructor</b> - Constructors are generally used for instantiating an object. The task of
+                constructors is
+                to initialize(assign values) to the data members of the class when an object of the class is created. In
+                Python the __init__() method is called the constructor and is always called when an object is
+                created.<br><br>
+                For example in our code,<br>
+                <code>def __init__(self,values: tuple):</code><br>
+                <code>&emsp; &emsp; """ constructor method"""</code><br>
+                <code>&emsp; &emsp; self.values = Calculation.convert_args_to_tuple_of_float(values)</code><br><br>
+                <b>The self </b>- self represents the instance of the class. By using the “self” keyword we can access
+                the
+                attributes and methods of the class in python. It binds the attributes with the given arguments. Self
+                must be provided as a first parameter to the Instance method and constructor. Self is a convention and
+                not a python keyword. <br><br>
+
+                The <b>__init__ method</b> - It is run as soon as an object of a class is instantiated. The method is
+                useful to
+                do any initialization you want to do with your object. <br><br>
+
+                <b>Class method </b>- A class method is a method that is bound to the class and not the object of the
+                class. It
+                can access or modify the class state. A class method receives the class as an implicit first argument,
+                just like an instance method receives the instance. We have used the class method in calculation.py to
+                generate a common method to do any calculation needed. (part 2) <br>
+                <code>@classmethod</code><br>
+                <code>def create(cls, value_a, value_b):</code><br>
+                <code>&emsp; &emsp; """General method made to do calculation whatever needed"""</code><br>
+                <code>&emsp; &emsp; return cls(value_a,value_b)</code><br><br>
+                <b>Static method </b>- A static method is also a method that is bound to the class and not the object of
+                the
+                class. It can’t access or modify the class state. static methods are used to create utility functions.
+                Example for static method (part2)<br>
+                <code>@staticmethod</code><br>
+                <code>def divide_numbers(value_a, value_b):</code><br>
+                <code>&emsp; &emsp; """ divide two numbers and store the result"""</code><br>
+                <code>&emsp; &emsp; division = Division.create(value_a, value_b)</code><br>
+                <code>&emsp; &emsp; Calculator.add_calculation_to_history(division)</code><br>
+                <code>&emsp; &emsp; return Calculator.get_result_of_last_calculation_added_to_history()</code><br><br>
+                <b>Namespace</b> - A namespace is a collection of currently defined symbolic names along with
+                information about
+                the object that each name references. You can think of a namespace as a dictionary in which the keys are
+                the object names and the values are the objects themselves. There are four types of namespaces -
+                built-in, global, enclosing, local. It is connected by periods and it is like folders and files in them.
+                In our calculator program, below shown is called namespace -
+                from calc.calculation import Calculation <br><br>
+
+                <b>Fixture</b> - It is used while testing. In testing, a fixture provides a defined, reliable and
+                consistent
+                context for the tests. We can tell pytest that a particular function is a fixture by decorating it with
+                <b>@pytest.fixture</b>. You define a function that will run each time you pass it to a test. For
+                example, in
+                our code <br>
+                <code>@pytest.fixture<br> def clear_history_fixture():</code><br>
+                <code>&emsp; &emsp;# pylint: disable=redefined-outer-name</code><br>
+                <code>&emsp; &emsp;Calculations.clear_history()</code><br><br><br>
+                <b>type hint</b> - Type hinting is a formal solution to statically indicate the type of a value within
+                your Python code. You annotate the arguments and the return value.
+                As shown in below example, It is saying for the ‘create’ method the values are expected to be of ‘tuple’
+                data type. <br><br>
+                <b>Typecast</b> - Users convert the data type of an object to required data type and this type of
+                conversion is called type casting.
+                In the last line type casting is done which is changing that list back to tuple <br>
+                <code>list_values_float = [] <br>
+                    &emsp; for item in values: <br>
+                    &emsp; &emsp; &emsp; list_values_float.append(float(item)) <br>
+                    &emsp; return tuple(list_values_float)
+                </code>
+            </p>
         </div>
     </div>
 </section>

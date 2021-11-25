@@ -3,6 +3,9 @@
     padding: 0;
 }
 
+#header{
+    margin-bottom: 1%;
+}
 nav {
     background-color: #193366;
     display: flex;
@@ -115,6 +118,37 @@ nav .fas {
 }
 
 #pylint{
-    border: 3px solid;
+    border: 2px solid;
 }
 
+#glossary{
+    border: 2px solid;
+}
+
+#aaa{
+    margin: 3%;
+}
+
+#testing{
+    border: 2px solid;
+    margin-bottom: 8px;
+}
+
+#data{
+    border: 2px solid;
+}
+
+#design{
+    margin: 3%;
+}
+
+#paterns{
+    border: 2px solid;
+}
+
+#oops{
+    margin: 3%;
+}
+#concept{
+    border: 2px solid;
+}
