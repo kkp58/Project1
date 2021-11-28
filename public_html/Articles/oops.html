@@ -87,7 +87,7 @@
                     accidental change, an object’s variable can only be changed by an object’s method. Those types of
                     variables are known as private variables. <br>
                     A class is an example of encapsulation as it encapsulates all the data that is member functions,
-                    variables, etc. <br>
+                    variables, etc. <br><br>
 
                     In our code, class ‘Calculation’ the lines with ‘self.value_a’ and ‘self.value_b’ are called the
                     instance properties. So every time a calculation is instantiated these are the properties that will
@@ -99,7 +99,7 @@
 
                     The method ‘get_result’ uses self to reference the data contained in the instance of the object.
                     This is
-                    encapsulation. Values a and b come from the parent 'calculation' class.
+                    encapsulation. Values a and b come from the parent 'Calculation' class.
                 </p>
             </div>
             <div class="col-md-2"></div>
@@ -118,19 +118,15 @@
 
                     In our example ‘Calculation’ is the parent class or base class and the Addition, Subtraction,
                     Division,
-                    Multiplication are the child classes. <br>
+                    Multiplication are the child classes. When a child class inherits from only one parent class, it is
+                    called single inheritance. Our code has single inheritance.<br><br>
 
-                    The code shows how you extend the Division class with the Calculation class and that is
-                    inheritance. <br>
-                    Since the class ‘Division’ inherits from the class ‘Calculation’, ‘value_a’and ‘value_b’ are also
+                    The 'division.py' code shows how you extend the 'Division' class with the 'Calculation' class and that is
+                    inheritance.
+                    Since the class ‘Division’ inherits from the class ‘Calculation’, ‘value_a’ and ‘value_b’ are also
                     the
                     objects of class ‘Division’. Class ‘Division’ inherits the value A and value B from the
-                    'calculation'
-                    class. <br>
-
-                    When a child class inherits from only one parent class, it is called single inheritance as we saw in
-                    the
-                    example above. <br>
+                    'Calculation' class.
                 </p>
             </div>
         </div>
@@ -149,7 +145,8 @@
                     abstract class. It does not have any solid implementation. An abstract method is a method that has a
                     declaration but does not have an implementation. ‘Calculation’ class only provides value_a and
                     value_b, and does not do any operations. It is inherited by other classes like ‘Addition’,
-                    ‘Division’ etc. By subclassing directly from the base, we can avoid the need to register the class
+                    ‘Division’ etc.  <br>
+                    By subclassing directly from the base, we can avoid the need to register the class
                     explicitly.
                 </p>
             </div>
@@ -163,8 +160,13 @@
                     len() <br>
                     It is used to find the length of the string as well as length of the list. In our program, we use
                     that function to count the number of calculations done, by calculating the length of the list called
-                    ‘history’ <br>
-
+                    ‘history’. <br>
+<code>
+    @staticmethod <br>
+    def history_count(): <br>
+    &emsp; &emsp;"""counts the number of calculations done""" <br>
+    &emsp; &emsp;return len(Calculator.history) <br><br>
+</code>
                     Each function has a single responsibility and what they do here is take parameters in and then call
                     the methods to do the necessary operations. We are trying to pass parameters into functions that we
                     can then use in a more generic way, so that less code needs to be written and it does not get
@@ -186,11 +188,12 @@
     <footer>
         <div class="row">
             <div class="col-md-6">
-                Image Credits - <a href="https://creativecommons.org/">https://creativecommons.org/</a>
+                © Krishna Patel:
+                <a href="https://github.com/kkp58/Project1/tree/Project2"> Github Repository</a>
             </div>
             <div class="col-md-6">
                 © Krishna Patel:
-                <a href="https://github.com/kkp58/Project1"> Github Repository</a>
+                <a href="https://github.com/kkp58/Project1/tree/CodePart2"> Python Code</a>
             </div>
         </div>
     </footer>
