@@ -1,6 +1,10 @@
-# Project1
+# Project2
 
-[Project 1](http://firstproject.eastus.azurecontainer.io/)
+[Project 2](http://firstproject.eastus.azurecontainer.io/)
 
 
-#### I have worked alone for this project, have one error in index.html while I validated using w3c validator
+####  This website now contains the content for Project 2.
+#### The content is in 'Project2' branch
+#### Every article has it's own one page.
+#### There are two more branches for Project 1 repo - CodePart2 and CodePart3 which contains two parts for the calculator code.
+
