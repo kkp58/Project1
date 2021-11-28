@@ -20,8 +20,8 @@
                 <li><a href="../concept.html">Concepts</a></li>
                 <li><a href="pylintAndOthers.html">Pylint & Terms</a></li>
                 <li><a href="AAATesting.html">AAA Testing</a></li>
-                <li><a href="design.html">Design Patterns</a></li>
                 <li><a href="oops.html">OOPS</a></li>
+                <li><a href="design.html">Design Patterns</a></li>
             </ul>
         </div>
         <i class="fas fa-bars" onclick="showMenu()"></i>
@@ -31,36 +31,36 @@
     <div class="row">
         <div id="pylint" class="col-md-6 card">
             <h2>Pylint:</h2>
-            <p>What is Pylint -
+            <p>
                 Pylint is a tool to check Python’s code errors enforcing some code standards. It looks for certain types
                 of errors and recommends suggestions about how particular chunks of code can be refactored. The Python
                 community has formalized some recommended programming styles to help everyone write code in a common,
                 agreed-upon style that makes the most sense for shared code. This style is captured in PEP 8, “the style
                 guide for Python code”. Pylint can be a quick and easy way of seeing if your code has captured the
-                pattern of PEP 8 standards and is user-friendly
-                It displays the number of messages as it analyzes the code and it can also be used for displaying some
+                pattern of PEP 8 standards and is user-friendly. <br>
+                It displays the number of messages as it analyzes the code, and it can also be used for displaying some
                 statistics about the number of warnings and errors found in different files. It gives overall marks to
                 the code based on the number and severity of the warnings and errors.
-                We should have .pylintrc which is the config file for pylint.
+                We should have .pylintrc which is the config file for pylint. <br><br>
 
-                We will make a small tutorial for one part of calculator code to check if that passes the pylint
+                We will make a small tutorial for one part of the calculator code to check if that passes the pylint
                 standards or not.
             </p>
             <h2>Tutorial</h2>
             <img src="../images/pylintTutorial1.jpg" alt="pylintTutorial1">
             <p>So this is our code ‘main.py’ for the calculator program. Let’s see what we get when we run through
-                pylint. Pylint also gives marks to your code.<br>
+                pylint. Pylint also gives marks to your code.<br><br>
 
-                Command - ‘pylint filename’. We have a main.py file in folder named calculator.
+                Command - ‘pylint filename’. We have a main.py file in the folder named calculator.
             </p>
             <img src="../images/pylintTutorial2.jpg" alt="pylintTutorial2">
-            <p>We see we got three error messages. First one says it’s on line 2 and the other two are on line 21. Two
-                of them are about missing class and function docstring. So there should be a little comment underneath
-                explaining the class ‘calculator’ and method ‘divide_number’ does. Middle one is about that method name
+            <p>From the above result we can see we got three error messages. First one says it’s on line 2 and the other two are on line 21. Two
+                of them are about missing class and function docstring. So there should be a little comment underneath about what does
+                the class ‘calculator’ and method ‘divide_number’ does. Middle one is about the method name
                 does not follow snake_case naming style. There should be no capital letters in the method name. Let’s
                 correct them and run it.
             </p>
-            <h4>Here is the updated code:</h4>
+            <h4>Below code is updated with corrections:</h4>
             <img src="../images/pylintTutorial3.jpg" alt="pylintTutorial3">
             <p>Let’s see what we get after running it</p>
             <img src="../images/pylintTutorial4.jpg" alt="pylintTutorial4">
@@ -70,12 +70,12 @@
             <h2>Glossary of important terminology in python</h2>
             <p><b>Class </b>- A class is a blueprint for the object. For example, we have a calculator class, which
                 takes care
-                of all the calculations. (in main branch)<br>
+                of all the calculations.<br>
                 <code>class Calculator:</code><br>
                 <code>&emsp; &emsp; """ This is the Calculator class """</code><br><br>
                 <b>Object </b>- An object (instance) is an instantiation of a class. When class is defined, only the
                 description for the object is defined. Therefore, no memory or storage is allocated.
-                In our calculator code, addition = Addition(mynumbers) ‘addition’ is called the object of ‘Addition’
+                In our calculator code, <i>addition = Addition(mynumbers)</i> ‘addition’ is called the object of ‘Addition’
                 class<br><br>
 
                 <b>Method</b> - Methods are functions defined inside the body of a class. They are used to define the
@@ -91,7 +91,7 @@
                 to initialize(assign values) to the data members of the class when an object of the class is created. In
                 Python the __init__() method is called the constructor and is always called when an object is
                 created.<br><br>
-                For example in our code,<br>
+                For example in our code we have,<br>
                 <code>def __init__(self,values: tuple):</code><br>
                 <code>&emsp; &emsp; """ constructor method"""</code><br>
                 <code>&emsp; &emsp; self.values = Calculation.convert_args_to_tuple_of_float(values)</code><br><br>
@@ -101,23 +101,23 @@
                 must be provided as a first parameter to the Instance method and constructor. Self is a convention and
                 not a python keyword. <br><br>
 
-                The <b>__init__ method</b> - It is run as soon as an object of a class is instantiated. The method is
+                <b>The __init__ method</b> - It is run as soon as an object of a class is instantiated. The method is
                 useful to
                 do any initialization you want to do with your object. <br><br>
 
-                <b>Class method </b>- A class method is a method that is bound to the class and not the object of the
+                <b>Class method </b>- A class method is a method that is bound to the class and not to the object of the
                 class. It
                 can access or modify the class state. A class method receives the class as an implicit first argument,
                 just like an instance method receives the instance. We have used the class method in calculation.py to
-                generate a common method to do any calculation needed. (part 2) <br>
+                generate a common method to do any calculation needed. <br>
                 <code>@classmethod</code><br>
                 <code>def create(cls, value_a, value_b):</code><br>
                 <code>&emsp; &emsp; """General method made to do calculation whatever needed"""</code><br>
                 <code>&emsp; &emsp; return cls(value_a,value_b)</code><br><br>
-                <b>Static method </b>- A static method is also a method that is bound to the class and not the object of
+                <b>Static method </b>- A static method is also a method that is bound to the class and not to the object of
                 the
-                class. It can’t access or modify the class state. static methods are used to create utility functions.
-                Example for static method (part2)<br>
+                class. It can’t access or modify the class state. Static methods are used to create utility functions.
+                Example for static method is shown below <br>
                 <code>@staticmethod</code><br>
                 <code>def divide_numbers(value_a, value_b):</code><br>
                 <code>&emsp; &emsp; """ divide two numbers and store the result"""</code><br>
@@ -129,25 +129,30 @@
                 the object that each name references. You can think of a namespace as a dictionary in which the keys are
                 the object names and the values are the objects themselves. There are four types of namespaces -
                 built-in, global, enclosing, local. It is connected by periods and it is like folders and files in them.
-                In our calculator program, below shown is called namespace -
-                from calc.calculation import Calculation <br><br>
+                In our calculator program, below shown is called namespace - <br>
+                <code>from calc.calculation import Calculation</code> <br><br>
 
-                <b>Fixture</b> - It is used while testing. In testing, a fixture provides a defined, reliable and
+                <b>Fixture</b> - In testing, a fixture provides a defined, reliable and
                 consistent
                 context for the tests. We can tell pytest that a particular function is a fixture by decorating it with
                 <b>@pytest.fixture</b>. You define a function that will run each time you pass it to a test. For
-                example, in
-                our code <br>
+                example, in our code we have clear history fixture <br>
                 <code>@pytest.fixture<br> def clear_history_fixture():</code><br>
                 <code>&emsp; &emsp;# pylint: disable=redefined-outer-name</code><br>
                 <code>&emsp; &emsp;Calculations.clear_history()</code><br><br><br>
-                <b>type hint</b> - Type hinting is a formal solution to statically indicate the type of a value within
+
+                <b>Type hint</b> - Type hinting is a formal solution to statically indicate the type of a value within
                 your Python code. You annotate the arguments and the return value.
                 As shown in below example, It is saying for the ‘create’ method the values are expected to be of ‘tuple’
-                data type. <br><br>
+                data type. <br>
+                <code>@classmethod<br>
+                    def create(cls,values: tuple):<br>
+                    &emsp; &emsp; """ factory method"""<br>
+                    &emsp; &emsp;return cls(values)</code><br><br><br>
+
                 <b>Typecast</b> - Users convert the data type of an object to required data type and this type of
                 conversion is called type casting.
-                In the last line type casting is done which is changing that list back to tuple <br>
+                In the last line type casting is done which is changing that list back to tuple data type. <br>
                 <code>list_values_float = [] <br>
                     &emsp; for item in values: <br>
                     &emsp; &emsp; &emsp; list_values_float.append(float(item)) <br>

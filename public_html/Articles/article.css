@@ -118,11 +118,11 @@ nav .fas {
 }
 
 #pylint{
-    border: 2px solid;
+    background-color: lightgray;
 }
 
 #glossary{
-    border: 2px solid;
+    background-color: lightgray;
 }
 
 #aaa{
@@ -132,18 +132,21 @@ nav .fas {
 #testing{
     border: 2px solid;
     margin-bottom: 8px;
+    background-color: mintcream;
 }
 
 #data{
     border: 2px solid;
+    background-color: mintcream;
 }
 
 #design{
     margin: 3%;
 }
 
-#paterns{
+#patterns{
     border: 2px solid;
+    background-color: azure;
 }
 
 #oops{
@@ -151,4 +154,8 @@ nav .fas {
 }
 #concept{
     border: 2px solid;
+}
+
+#page{
+    background-color: cadetblue;
 }
