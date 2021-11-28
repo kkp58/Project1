@@ -1,8 +1,8 @@
 version: "3.2"
 services:
-  apache:
+  python:
     build: .
-    ports:
-      - "8080:80"
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
     volumes:
-      - ./public_html/:/usr/local/apache2/htdocs/
+      - .:/home/myuser
