@@ -9,7 +9,7 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-<section id="header">
+<section id="header" class="oopsBackground">
     <nav>
         <a href="../index.html"><img src="../images/logo1.png" alt=""></a>
         <div class="nav-links" id="navLinks">
@@ -26,51 +26,175 @@
         </div>
         <i class="fas fa-bars" onclick="showMenu()"></i>
     </nav>
+    <section id="oops">
+        <h2 class="oopsHeader title">Object Oriented Programming Concepts</h2>
+        <div id="code1" class="card">
+            <h5 class="oopsHeader">Code of calculation.py file</h5>
+            <code>
+                """This is our calculation base class / Abstract Class""" <br>
+                class Calculation: <br>
+                &emsp; &emsp;# pylint: disable=too-few-public-methods <br>
+                &emsp; &emsp;"""This is our calculation base class / Abstract Class""" <br>
+
+                &emsp; &emsp;#contstructor and it is the first function called when an object of the class is
+                instantiated
+                <br>
+                &emsp; &emsp;def __init__(self,value_a, value_b): <br>
+                &emsp; &emsp;&emsp; &emsp;#self references the instantiated object of the class <br>
+                &emsp; &emsp;&emsp; &emsp;#these are instance properties that are being shared with the child classes
+                <br>
+                &emsp; &emsp;&emsp; &emsp;self.value_a = value_a <br>
+                &emsp; &emsp;&emsp; &emsp;self.value_b = value_b <br><br>
+                &emsp; &emsp;# Class Factory Method <- bound to the class and not the instance of the class <br>
+                &emsp; &emsp;@classmethod <br>
+                &emsp; &emsp;def create(cls, value_a, value_b): <br>
+                &emsp; &emsp;&emsp; &emsp;"""General method made to do calculation whatever needed""" <br>
+                &emsp; &emsp;&emsp; &emsp;return cls(value_a,value_b) <br>
+            </code>
+
+            <br><br>
+            <h5 class="oopsHeader">Code of division.py file</h5>
+            <code class="code2">
+                """This is the division calculation that inherits the value A and value B from the calculation class"""
+                <br>
+
+                from calc.calculation import Calculation <br><br>
+
+                #This is how you extend the Division class with the Calculation <br>
+                class Division(Calculation): <br>
+                &emsp; &emsp;"""The division class has one method to get the result of the the calculation A and B come
+                from
+                <br>
+                the calculation parent class""" <br>
+                &emsp; &emsp;def get_result(self): <br>
+                &emsp; &emsp;&emsp; &emsp;"""This is encapsulation""" <br>
+                &emsp; &emsp;&emsp; &emsp;result = 0 <br>
+                &emsp; &emsp;&emsp; &emsp;try: <br>
+                &emsp; &emsp;&emsp; &emsp;&emsp; &emsp;result = self.value_a / self.value_b <br>
+                &emsp; &emsp;&emsp; &emsp;except ZeroDivisionError: <br>
+                &emsp; &emsp;&emsp; &emsp;&emsp; &emsp;print("Cannot divide by zero") <br>
+                &emsp; &emsp;&emsp; &emsp;return result <br><br>
+            </code>
+        </div>
+        <div class="row row1">
+            <div class="col-md-5 card">
+                <h3 class="contentHeader">Encapsulation </h3>
+                <p>Encapsulation is one of the fundamental concepts in object-oriented programming (OOP). It describes
+                    the
+                    idea of wrapping data and the methods that work on data within one unit. This puts restrictions on
+                    accessing variables and methods directly and can prevent the accidental modification of data. To
+                    prevent
+                    accidental change, an object’s variable can only be changed by an object’s method. Those types of
+                    variables are known as private variables. <br>
+                    A class is an example of encapsulation as it encapsulates all the data that is member functions,
+                    variables, etc. <br>
+
+                    In our code, class ‘Calculation’ the lines with ‘self.value_a’ and ‘self.value_b’ are called the
+                    instance properties. So every time a calculation is instantiated these are the properties that will
+                    be
+                    independent and this is called encapsulation. So encapsulation means that when an object is
+                    instantiated
+                    that it encapsulates(contains) it's properties and methods in an object. The __init__ method is a
+                    constructor and runs as soon as an object of a class is instantiated. <br>
+
+                    The method ‘get_result’ uses self to reference the data contained in the instance of the object.
+                    This is
+                    encapsulation. Values a and b come from the parent 'calculation' class.
+                </p>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-5 card">
+                <h3 class="contentHeader">Inheritance</h3>
+                <p>Inheritance is the capability of one class to derive or inherit the properties from another class. It
+                    provides reusability of a code. We don’t have to write the same code again and again. Also, it
+                    allows us
+                    to add more features to a class without modifying it. It is transitive in nature, which means that
+                    if
+                    class B inherits from another class A, then all the subclasses of B would automatically inherit from
+                    class A. <br>
+                    We use the base class so that the parent can provide all their functionalities to the child class.
+                    The
+                    parent class should not be dependent on the child class. <br>
+
+                    In our example ‘Calculation’ is the parent class or base class and the Addition, Subtraction,
+                    Division,
+                    Multiplication are the child classes. <br>
+
+                    The code shows how you extend the Division class with the Calculation class and that is
+                    inheritance. <br>
+                    Since the class ‘Division’ inherits from the class ‘Calculation’, ‘value_a’and ‘value_b’ are also
+                    the
+                    objects of class ‘Division’. Class ‘Division’ inherits the value A and value B from the
+                    'calculation'
+                    class. <br>
+
+                    When a child class inherits from only one parent class, it is called single inheritance as we saw in
+                    the
+                    example above. <br>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 card">
+                <h3 class="contentHeader">Abstraction </h3>
+                <p>An abstract class can be considered as a blueprint for other classes. It allows you to create a set
+                    of methods that must be created within any child classes built from the abstract class. A class
+                    which contains one or more abstract methods is called an abstract class. While we are designing
+                    large functional units and also when we want to provide a common interface for different
+                    implementations of a component, we use an abstract class. <br>
+
+                    In our program, ‘Calculation’ class is called base class as well as abstract class, and it is called
+                    abstract class because it cannot do any calculations on its own. If a class does not function
+                    without its children, means if that class needs to be extended for it to function, it is called an
+                    abstract class. It does not have any solid implementation. An abstract method is a method that has a
+                    declaration but does not have an implementation. ‘Calculation’ class only provides value_a and
+                    value_b, and does not do any operations. It is inherited by other classes like ‘Addition’,
+                    ‘Division’ etc. By subclassing directly from the base, we can avoid the need to register the class
+                    explicitly.
+                </p>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-5 card">
+                <h3 class="contentHeader">Polymorphism</h3>
+                <p>The word polymorphism means having many forms. In programming, polymorphism means the same function
+                    name (but different signatures) being used for different types. <br>
+
+                    One of the built-in polymorphic function is - <br>
+                    len() <br>
+                    It is used to find the length of the string as well as length of the list. In our program, we use
+                    that function to count the number of calculations done, by calculating the length of the list called
+                    ‘history’ <br>
+
+                    Each function has a single responsibility and what they do here is take parameters in and then call
+                    the methods to do the necessary operations. We are trying to pass parameters into functions that we
+                    can then use in a more generic way, so that less code needs to be written and it does not get
+                    repeated. We are trying to make things more abstract and that's another fundamental of Object
+                    Oriented Programming which also helps in reassembling the code easily. <br>
+                </p>
+            </div>
+        </div>
+
+<!--        This is just to leave some space for designing-->
+        <div class="row">
+            <div class="col-md-2">
+                <p></p>
+            </div>
+        </div>
+    </section>
 </section>
-<section id="oops">
-    <h2>Object Oriented Programming Concepts</h2>
-    <div id="code1" class="card">
-        <h5>Code of calculation.py file</h5>
-        <code>
-            """This is our calculation base class / Abstract Class""" <br>
-            class Calculation:    <br>
-            &emsp; &emsp;# pylint: disable=too-few-public-methods <br>
-            &emsp; &emsp;"""This is our calculation base class / Abstract Class""" <br>
-
-            &emsp; &emsp;#contstructor and it is the first function called when an object of the class is instantiated <br>
-            &emsp; &emsp;def __init__(self,value_a, value_b): <br>
-            &emsp; &emsp;&emsp; &emsp;#self references the instantiated object of the class <br>
-            &emsp; &emsp;&emsp; &emsp;#these are instance properties that are being shared with the child classes <br>
-            &emsp; &emsp;&emsp; &emsp;self.value_a = value_a <br>
-            &emsp; &emsp;&emsp; &emsp;self.value_b = value_b <br><br>
-            &emsp; &emsp;# Class Factory Method <- bound to the class and not the instance of the class <br>
-            &emsp; &emsp;@classmethod <br>
-            &emsp; &emsp;def create(cls, value_a, value_b): <br>
-            &emsp; &emsp;&emsp; &emsp;"""General method made to do calculation whatever needed""" <br>
-            &emsp; &emsp;&emsp; &emsp;return cls(value_a,value_b) <br>
-        </code>
-
-        <br><br>
-        <h5>Code of division.py file</h5>
-<code>
-    """This is the division calculation that inherits the value A and value B from the calculation class""" <br>
-
-    from calc.calculation import Calculation <br><br>
-
-    #This is how you extend the Division class with the Calculation <br>
-    class Division(Calculation): <br>
-    &emsp; &emsp;"""The division class has one method to get the result of the the calculation A and B come from <br>
-    the calculation parent class""" <br>
-    &emsp; &emsp;def get_result(self): <br>
-    &emsp; &emsp;&emsp; &emsp;"""This is encapsulation""" <br>
-    &emsp; &emsp;&emsp; &emsp;result = 0 <br>
-    &emsp; &emsp;&emsp; &emsp;try: <br>
-    &emsp; &emsp;&emsp; &emsp;&emsp; &emsp;result = self.value_a / self.value_b <br>
-    &emsp; &emsp;&emsp; &emsp;except ZeroDivisionError: <br>
-    &emsp; &emsp;&emsp; &emsp;&emsp; &emsp;print("Cannot divide by zero") <br>
-    &emsp; &emsp;&emsp; &emsp;return result <br><br>
-</code>
-    </div>
+<section class="foot">
+    <footer>
+        <div class="row">
+            <div class="col-md-6">
+                Image Credits - <a href="https://creativecommons.org/">https://creativecommons.org/</a>
+            </div>
+            <div class="col-md-6">
+                © Krishna Patel:
+                <a href="https://github.com/kkp58/Project1"> Github Repository</a>
+            </div>
+        </div>
+    </footer>
 </section>
+<script src="../toggle.js"></script>
 </body>
 </html>
