@@ -20,16 +20,56 @@
                 <li><a href="../concept.html">Concepts</a></li>
                 <li><a href="pylintAndOthers.html">Pylint & Terms</a></li>
                 <li><a href="AAATesting.html">AAA Testing</a></li>
-                <li><a href="design.html">Design Patterns</a></li>
                 <li><a href="oops.html">OOPS</a></li>
+                <li><a href="design.html">Design Patterns</a></li>
             </ul>
         </div>
         <i class="fas fa-bars" onclick="showMenu()"></i>
     </nav>
 </section>
 <section id="oops">
-    <div id="concept" class="card">
-        <h2>OOPS</h2>
+    <h2>Object Oriented Programming Concepts</h2>
+    <div id="code1" class="card">
+        <h5>Code of calculation.py file</h5>
+        <code>
+            """This is our calculation base class / Abstract Class""" <br>
+            class Calculation:    <br>
+            &emsp; &emsp;# pylint: disable=too-few-public-methods <br>
+            &emsp; &emsp;"""This is our calculation base class / Abstract Class""" <br>
+
+            &emsp; &emsp;#contstructor and it is the first function called when an object of the class is instantiated <br>
+            &emsp; &emsp;def __init__(self,value_a, value_b): <br>
+            &emsp; &emsp;&emsp; &emsp;#self references the instantiated object of the class <br>
+            &emsp; &emsp;&emsp; &emsp;#these are instance properties that are being shared with the child classes <br>
+            &emsp; &emsp;&emsp; &emsp;self.value_a = value_a <br>
+            &emsp; &emsp;&emsp; &emsp;self.value_b = value_b <br><br>
+            &emsp; &emsp;# Class Factory Method <- bound to the class and not the instance of the class <br>
+            &emsp; &emsp;@classmethod <br>
+            &emsp; &emsp;def create(cls, value_a, value_b): <br>
+            &emsp; &emsp;&emsp; &emsp;"""General method made to do calculation whatever needed""" <br>
+            &emsp; &emsp;&emsp; &emsp;return cls(value_a,value_b) <br>
+        </code>
+
+        <br><br>
+        <h5>Code of division.py file</h5>
+<code>
+    """This is the division calculation that inherits the value A and value B from the calculation class""" <br>
+
+    from calc.calculation import Calculation <br><br>
+
+    #This is how you extend the Division class with the Calculation <br>
+    class Division(Calculation): <br>
+    &emsp; &emsp;"""The division class has one method to get the result of the the calculation A and B come from <br>
+    the calculation parent class""" <br>
+    &emsp; &emsp;def get_result(self): <br>
+    &emsp; &emsp;&emsp; &emsp;"""This is encapsulation""" <br>
+    &emsp; &emsp;&emsp; &emsp;result = 0 <br>
+    &emsp; &emsp;&emsp; &emsp;try: <br>
+    &emsp; &emsp;&emsp; &emsp;&emsp; &emsp;result = self.value_a / self.value_b <br>
+    &emsp; &emsp;&emsp; &emsp;except ZeroDivisionError: <br>
+    &emsp; &emsp;&emsp; &emsp;&emsp; &emsp;print("Cannot divide by zero") <br>
+    &emsp; &emsp;&emsp; &emsp;return result <br><br>
+</code>
     </div>
 </section>
 </body>
