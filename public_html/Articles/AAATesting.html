@@ -101,7 +101,7 @@
             csv files but a library called pandas does the great job. Pandas can read, write, manipulate csv files,
             Excel files and others too.
             <ul>
-
+        <li>Import the pandas library.</li>
             <li>It reads the csv file using ‘read_csv’ syntax.</li>
         <li>First open the file, try to print it out to make sure the data looks good using python code. </li>
             <li> To get the data
@@ -114,8 +114,32 @@
         not start with a drive specifier, e.g. (data/test_file.csv). </li>
             <li>An <b>absolute path</b> is the complete path from the base of your file system to the file that you want to load,
             e.g. c:/Documents/Tom/data/test_file.csv. </li>
-
     </ul>
+        Here we would show a little tutorial for our calculator program on how to use external data using CSV file. (The whole
+        code is present in csv branch, mentioned in the footer). <br><br>
+        <code>
+            with open("allFunctionsResults.txt", "w", encoding='utf-8') as results:
+        </code>
+    The above code makes the new file and opens up, "w" means it writes and 'encoding' needs to be mentioned in order to
+        get the data in correct format.
+        <br><br>
+<code>
+    test_data = pd.read_csv(absolutepath("tests/test_data/addition.csv"))
+</code>
+        This 'test_data' dataframe reads the csv file we mentioned with pandas.
+        <br><br>
+        <code>
+            for record, row in test_data.iterrows(): <br>
+            &emsp; &emsp;add = Addition((row['Value 1'], row['Value 2']))
+        </code>
+        The above code will iterate through each row of the dataframe and will take one at a time. 'Addition' class is called to do
+        the add operation.
+        <br><br>
+        To write into the file, '.write' is used as shown below
+        <code>
+            results.write('Record Value 1, Value 2, Result \n')
+        </code>
+
         </p>
     </div>
 </section>
