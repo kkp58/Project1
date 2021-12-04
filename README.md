@@ -1,6 +1,6 @@
 # Project2
 
-[Project 2](http://articles.eastus.azurecontainer.io/)
+[Project 2](http://concepts.eastus.azurecontainer.io/)
 
 
 ####  This website now contains the content for Project 2.
